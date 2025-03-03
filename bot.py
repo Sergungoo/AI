@@ -10,10 +10,6 @@ load_dotenv()
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-# Проверяем, загружены ли ключи
-if not TELEGRAM_BOT_TOKEN or not OPENAI_API_KEY:
-    raise ValueError("❌ Ошибка: Не найдены TELEGRAM_BOT_TOKEN или OPENAI_API_KEY в .env")
-
 # Инициализация бота и OpenAI
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
 openai.api_key = OPENAI_API_KEY
